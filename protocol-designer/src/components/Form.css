@@ -3,6 +3,8 @@
  */
 @import '@opentrons/components';
 
+@lost gutter 0.5rem;
+
 /* TODO Ian 2018-01-24 generic column fraction classes available in component css? */
 .column_1_2 {
   lost-column: 1/2;
@@ -16,10 +18,6 @@
   lost-column: 2/3;
 }
 
-.column_1_4 {
-  lost-column: 1/4;
-}
-
 .form {
   background-color: white;
   padding: 0.75rem;
@@ -28,16 +26,27 @@
 
 .rightmost_column {
   /* Make space for the absolute-positioned carats on the right */
-  padding-right: 4rem;
+  padding-right: 2rem;
 }
 
 .top_row {
   lost-utility: clearfix;
-  margin-bottom: 1rem;
+}
 
-  & > * {
-    lost-column: 1/4;
-  }
+.well_selection_input {
+  lost-column: 2/16;
+}
+
+.labware_field {
+  lost-column: 6/16;
+}
+
+.volume_field {
+  lost-column: 7/16;
+}
+
+.pipette_field {
+  lost-column: 7/16;
 }
 
 .row_wrapper {
@@ -48,12 +57,17 @@
   lost-utility: clearfix;
   min-height: 2.25rem;
 
+  /* All items in field row sum to 15/16, leaving 1/16 gap on the right */
+  & label {
+    lost-column: 7/16;
+  }
+
   & > * {
-    lost-column: 1/3;
+    lost-column: 4/16;
   }
 
   & .full_width {
-    lost-column: 2/3;
+    lost-column: 8/16;
   }
 }
 
